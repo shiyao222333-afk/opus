@@ -302,8 +302,8 @@
 
 | 优先级 | 事项 | 理由 |
 |--------|------|------|
-| 🔴 P0 | **Alembic v0.1 落地** | 快速跑通 B站→字幕→文档管道，拿到第一个 MVP |
-| 🔴 P0 | **Athaneum 团队名称统一** | knowledge-forge 仓库重命名？或保持现状只改文档引用 |
+| ✅ **已完成** | **Athaneum 团队名称统一** | 仓库已重命名：knowledge-forge→athanor, video-forge→alembic, opus→opus-magnum |
+| 🔴 P0 | **Alembic v0.1 落地** | 骨架已搭建（29文件），下一步跑通 B站→字幕→文档管道 MVP |
 | 🟡 P1 | **social-auto-upload 调研试跑** | 测试能否直接嵌入 Elixir，省去自己造轮子 |
 | 🟡 P1 | **参考书注入 Athanor** | 把 20 本参考书的核心摘要存入知识库，LLM 可随时引用 |
 | 🟢 P2 | **Crucible 技术选型验证** | XLM-RoBERTa-XNLI 中文效果实测 + D-S 融合原型 |
