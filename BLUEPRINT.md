@@ -43,7 +43,7 @@
    ┌─────────┐   ┌─────────┐  ┌─────────┐  ┌─────────┐  ┌─────────┐
    │ 🏭      │   │ ⚗️      │  │ 🔬      │  │ ✨      │  │ 🤖      │
    │Athanor │   │Alembic  │  │Crucible │  │ Elixir  │  │Homunculus│
-   │ 恒炉    │   │ 蒸萃     │  │ 试金     │  │ 灵药     │  │ 精怪      │
+   │ 熔知    │   │ 馏析     │  │ 炼真     │  │ 凝华     │  │ 化形      │
    │知识引擎 │   │内容提炼  │  │矛盾检测  │  │内容发布  │  │自动化     │
    └────┬────┘   └────┬────┘  └────┬────┘  └────┬────┘  └────┬────┘
         │              │           │           │              │
@@ -54,7 +54,7 @@
    └─────────┘   └─────────┘  └─────────┘  └─────────┘   └─────────┘
 ```
 
-### 🏭 Athanor（恒炉）— 知识引擎
+### 🏭 Athanor · 熔知 / MindForge — 知识引擎
 
 > *Athanor 是炼金术士的自给熔炉，一旦点燃永不熄灭。*
 
@@ -70,7 +70,7 @@
 
 ---
 
-### ⚗️ Alembic（蒸萃）— 内容提炼
+### ⚗️ Alembic · 馏析 / DeepDistill — 内容提炼
 
 > *Alembic 是蒸馏器，将混合物加热，蒸汽上升，冷凝为纯液。*
 
@@ -86,7 +86,7 @@
 
 ---
 
-### 🔬 Crucible（试金）— 矛盾检测
+### 🔬 Crucible · 炼真 / TrialFire — 矛盾检测
 
 > *Crucible 是坩埚，承受极端高温。杂质熔化蒸发，真金留存。*
 
@@ -102,7 +102,7 @@
 
 ---
 
-### ✨ Elixir（灵药）— 内容发布
+### ✨ Elixir · 凝华 / PureDrop — 内容发布
 
 > *Elixir 是哲人石浸泡后的液体，一滴即可点石成金。*
 
@@ -117,7 +117,7 @@
 
 ---
 
-### 🤖 Homunculus（精怪）— 自动化
+### 🤖 Homunculus · 化形 / FormWeaver — 自动化
 
 > *Homunculus 是炼金术士在烧瓶中培育的人造小人，替主人操劳。*
 
@@ -143,25 +143,25 @@
         │               │               │
         ▼               ▼               ▼
    ┌─────────────────────────────────────────┐
-   │            ⚗️ Alembic 蒸萃               │
+   │          ⚗️ Alembic · 馏析               │
    │   下载→字幕→ASR→LLM文档化→结构化        │
    └─────────────────┬───────────────────────┘
                      │  Markdown/JSON
                      ▼
    ┌─────────────────────────────────────────┐
-   │            🔬 Crucible 试金              │
+   │          🔬 Crucible · 炼真              │
    │  声明提取→矛盾检测→D-S融合→可信度报告   │
    └─────────────────┬───────────────────────┘
                      │  验证后的知识
                      ▼
    ┌─────────────────────────────────────────┐
-   │            🏭 Athanor 恒炉               │
+   │          🏭 Athanor · 熔知                 │
    │        Qdrant 向量存储 + 检索            │
    └─────────────────┬───────────────────────┘
                      │  知识检索
                      ▼
    ┌─────────────────────────────────────────┐
-   │            ✨ Elixir 灵药                 │
+   │          ✨ Elixir · 凝华                 │
    │  LLM内容生成 → 多平台分发 → 私域经营     │
    └─────────────────────────────────────────┘
                      │
@@ -172,7 +172,7 @@
      知识付费   工具订阅   广告/咨询
 
    ┌─────────────────────────────────────────┐
-   │          🤖 Homunculus 精怪              │
+   │        🤖 Homunculus · 化形              │
    │       全程调度 · 监控 · 自动化            │
    └─────────────────────────────────────────┘
 ```
@@ -383,12 +383,12 @@
 
 | 新名 | 旧名 | 仓库 | 路径 |
 |------|------|------|------|
-| ⚛️ Opus | — | shiyao222333-afk/opus | `D:\opus\` |
-| 🏭 Athanor | 知炬/KnowledgeForge | shiyao222333-afk/knowledge-forge | `D:\knowledge-forge\` |
-| ⚗️ Alembic | VideoForge | shiyao222333-afk/video-forge | `D:\video-forge\` |
-| 🔬 Crucible | VeritaForge | 待创建 | 待定 |
-| ✨ Elixir | — | 远期 | 远期 |
-| 🤖 Homunculus | — | 远期 | 远期 |
+| ⚛️ OpusMagnum · 巨作 / GreatWork | — | shiyao222333-afk/opus-magnum | `D:\opus\` |
+| 🏭 Athanor · 熔知 / MindForge | 知炬/KnowledgeForge | shiyao222333-afk/athanor | `D:\knowledge-forge\` |
+| ⚗️ Alembic · 馏析 / DeepDistill | VideoForge | shiyao222333-afk/alembic | `D:\video-forge\` |
+| 🔬 Crucible · 炼真 / TrialFire | VeritaForge | 待创建 | 待定 |
+| ✨ Elixir · 凝华 / PureDrop | — | 远期 | 远期 |
+| 🤖 Homunculus · 化形 / FormWeaver | — | 远期 | 远期 |
 
 ---
 
