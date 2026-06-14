@@ -1,0 +1,9 @@
+# Opus
+
+.DS_Store
+Thumbs.db
+desktop.ini
+.idea/
+.vscode/
+*.tmp
+*.temp
