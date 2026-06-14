@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://opus-magnum.local/schemas/task.schema.json",
+  "title": "Task - 跨项目任务",
+  "description": "OpusMagnum 与 GitHub Issues 同步的任务格式。",
+  "type": "object",
+  "required": ["task_id", "title", "status", "project"],
+  "properties": {
+    "task_id": {
+      "type": "string",
+      "description": "任务 ID（GitHub Issue number 或本地 UUID）"
+    },
+    "title": {
+      "type": "string",
+      "description": "任务标题"
+    },
+    "body": {
+      "type": "string",
+      "description": "任务详细描述（Markdown）"
+    },
+    "status": {
+      "type": "string",
+      "enum": ["todo", "in_progress", "done", "cancelled"],
+      "description": "任务状态"
+    },
+    "project": {
+      "type": "string",
+      "enum": ["athanor", "alembic", "crucible", "elixir", "opus-magnum"],
+      "description": "所属项目"
+    },
+    "labels": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": ["bug", "feature", "idea", "docs", "refactor"]
+      },
+      "description": "标签"
+    },
+    "priority": {
+      "type": "string",
+      "enum": ["P0", "P1", "P2", "P3"],
+      "description": "优先级"
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "updated_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "github_issue_url": {
+      "type": "string",
+      "format": "uri",
+      "description": "对应 GitHub Issue 链接（如果有）"
+    }
+  }
+}

@@ -7,3 +7,20 @@ desktop.ini
 .vscode/
 *.tmp
 *.temp
+
+# Python
+__pycache__/
+*.pyc
+venv/
+env/
+
+# Environment
+.env
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db

@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://opus-magnum.local/schemas/claim.schema.json",
+  "title": "Claim - 声明结构",
+  "description": "Crucible 从文档中提取的结构化声明，以及声明之间的关系。",
+  "type": "object",
+  "required": ["claim_id", "doc_id", "content", "confidence"],
+  "properties": {
+    "claim_id": {
+      "type": "string",
+      "description": "声明唯一 ID",
+      "example": "clm_a1b2c3"
+    },
+    "doc_id": {
+      "type": "string",
+      "description": "来源文档 ID（对应 document.schema.json 的 doc_id）"
+    },
+    "content": {
+      "type": "string",
+      "description": "声明内容（自然语言，一句话）",
+      "example": "钣金件的最小折弯半径是板厚的 1.5 倍"
+    },
+    "category": {
+      "type": "string",
+      "enum": ["fact", "definition", "method", "opinion", "data"],
+      "description": "声明类别：事实/定义/方法/观点/数据"
+    },
+    "confidence": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1,
+      "description": "LLM 提取置信度"
+    },
+    "source_span": {
+      "type": "object",
+      "properties": {
+        "start": { "type": "integer" },
+        "end": { "type": "integer" }
+      },
+      "description": "原文中的起止位置（用于溯源）"
+    },
+    "embedding": {
+      "type": "array",
+      "items": { "type": "number" },
+      "description": "声明向量（用于相似度匹配，可选）"
+    }
+  }
+}

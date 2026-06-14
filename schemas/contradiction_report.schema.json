@@ -1,0 +1,73 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://opus-magnum.local/schemas/contradiction_report.schema.json",
+  "title": "ContradictionReport - 矛盾报告",
+  "description": "Crucible 检测完成后输出的矛盾报告，供 OpusMagnum 展示和 Athanor 标记知识库。",
+  "type": "object",
+  "required": ["report_id", "created_at", "pairs"],
+  "properties": {
+    "report_id": {
+      "type": "string",
+      "description": "报告唯一 ID"
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "kb_name": {
+      "type": "string",
+      "description": "检测目标知识库名称"
+    },
+    "total_claims": {
+      "type": "integer",
+      "description": "参与检测的声明总数"
+    },
+    "pairs": {
+      "type": "array",
+      "description": "矛盾对列表（按严重程度排序）",
+      "items": {
+        "type": "object",
+        "required": ["claim_a", "claim_b", "verdict", "severity"],
+        "properties": {
+          "claim_a": {
+            "$ref": "claim.schema.json",
+            "description": "声明 A"
+          },
+          "claim_b": {
+            "$ref": "claim.schema.json",
+            "description": "声明 B"
+          },
+          "verdict": {
+            "type": "string",
+            "enum": ["contradiction", "neutral", "support"],
+            "description": "NLI 判断结果"
+          },
+          "severity": {
+            "type": "string",
+            "enum": ["critical", "high", "medium", "low"],
+            "description": "严重程度（D-S 融合后）"
+          },
+          "confidence": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1,
+            "description": "D-S 置信度"
+          },
+          "explanation": {
+            "type": "string",
+            "description": "LLM 生成的解释"
+          },
+          "recommendation": {
+            "type": "string",
+            "enum": ["trust_a", "trust_b", "needs_review"],
+            "description": "建议：采信 A / 采信 B / 需人工复核"
+          }
+        }
+      }
+    },
+    "summary": {
+      "type": "string",
+      "description": "LLM 生成的整体总结"
+    }
+  }
+}

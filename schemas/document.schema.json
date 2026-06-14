@@ -1,0 +1,64 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://opus-magnum.local/schemas/document.schema.json",
+  "title": "Document - 统一文档格式",
+  "description": "Athanor 与 Alembic 之间传递文档的统一格式。Alembic 产出此格式，Athanor 按此格式入库。",
+  "type": "object",
+  "required": ["doc_id", "title", "content", "source_type", "created_at"],
+  "properties": {
+    "doc_id": {
+      "type": "string",
+      "description": "文档唯一 ID（UUID 或 hash）",
+      "example": "a1b2c3d4-e5f6-7890-abcd-ef1234567890"
+    },
+    "title": {
+      "type": "string",
+      "description": "文档标题",
+      "example": "钣金工艺基础教程"
+    },
+    "content": {
+      "type": "string",
+      "description": "文档正文（Markdown 格式）",
+      "example": "## 简介\n钣金是..."
+    },
+    "summary": {
+      "type": "string",
+      "description": "LLM 生成的摘要（200 字以内）"
+    },
+    "source_type": {
+      "type": "string",
+      "enum": ["video", "pdf", "webpage", "note", "book"],
+      "description": "来源类型"
+    },
+    "source_url": {
+      "type": "string",
+      "format": "uri",
+      "description": "来源链接（B站视频 BV 号、网页 URL 等）"
+    },
+    "author": {
+      "type": "string",
+      "description": "作者/频道名"
+    },
+    "tags": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "标签列表"
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "原文发布时间（ISO 8601）"
+    },
+    "ingested_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "入库时间（ISO 8601）"
+    },
+    "quality_score": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1,
+      "description": "内容质量评分（Alembic 评估）"
+    }
+  }
+}

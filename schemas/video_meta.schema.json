@@ -1,0 +1,67 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://opus-magnum.local/schemas/video_meta.schema.json",
+  "title": "VideoMeta - 视频元数据",
+  "description": "Alembic 处理视频后输出的统一元数据格式，供 OpusMagnum 仪表盘展示。",
+  "type": "object",
+  "required": ["video_id", "title", "platform", "status"],
+  "properties": {
+    "video_id": {
+      "type": "string",
+      "description": "视频唯一标识（B站 BV 号 / YouTube videoId）",
+      "example": "BV1xx411c7mD"
+    },
+    "title": {
+      "type": "string",
+      "description": "视频标题"
+    },
+    "platform": {
+      "type": "string",
+      "enum": ["bilibili", "youtube", "xiaohongshu"],
+      "description": "视频平台"
+    },
+    "url": {
+      "type": "string",
+      "format": "uri"
+    },
+    "duration_seconds": {
+      "type": "integer",
+      "description": "视频时长（秒）"
+    },
+    "author": {
+      "type": "string",
+      "description": "UP 主/频道名"
+    },
+    "published_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "has_subtitle": {
+      "type": "boolean",
+      "description": "是否有 CC 字幕"
+    },
+    "has_danmaku": {
+      "type": "boolean",
+      "description": "是否有弹幕"
+    },
+    "status": {
+      "type": "string",
+      "enum": ["pending", "downloading", "transcribing", "documenting", "completed", "failed"],
+      "description": "处理状态"
+    },
+    "progress_percent": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 100
+    },
+    "output_doc_id": {
+      "type": "string",
+      "description": "处理后生成的文档 ID（对应 document.schema.json 的 doc_id）"
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "任务创建时间"
+    }
+  }
+}
