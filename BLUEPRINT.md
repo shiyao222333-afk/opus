@@ -217,6 +217,120 @@
 
 ---
 
+## 🔎 GitHub 同类项目竞品分析
+
+> *知己知彼，百战不殆。以下为 2026.06 调研结果。*
+
+### 全景对比
+
+| 项目 | Stars | 覆盖范围 | 与 Opus 对比 |
+|------|-------|---------|-------------|
+| **dreammis/social-auto-upload** | ⭐9.5K | 多平台视频发布（B站/抖音/TikTok/小红书/快手/视频号） | 🔶 做了 Elixir 的一半（只发布，不创作） |
+| **cyfyifanchen/one-person-company** | ⭐2.7K | 一人公司工具推荐（LLM/设计/代码/生产力） | 🔶 资源列表，不是蓝图。我们的"怎么做"，它只是"用什么" |
+| **OrangeViolin/content-pipeline** | 新兴 | AI内容管道：一个prompt→多平台发布 | 🔶 概念相似！但没有知识库支撑、没有验证层、面向纯内容分发 |
+| **Libr-AI/OpenFactVerification (LOKI)** | ⭐1K+ | 事实核查五步管线 | 🔶 做了 Crucible 的一部分（声明提取+验证），但不支持中文、非跨文档 |
+| **IshanRai9/Document-Semantic-Contradiction-Detector** | ⭐0 | 跨文档矛盾检测 7 步 NLI 管道 | 🔶 架构可借鉴，但不支持中文、无 D-S 融合 |
+| **bilibili-api-python** | ⭐高 | B站全量 API 封装 | 🟢 可作为 Alembic 的数据采集轮子 |
+
+### 关键发现
+
+> 🎯 **目前没有项目覆盖「摄入→验证→存储→创作→分发」的完整闭环。**
+>
+> social-auto-upload 是 Elixir 最直接的竞品，但它只做了「分发」这一步，前面的「从什么内容分发」完全不管。  
+> content-pipeline 概念最近似，但缺乏知识库和验证层，本质是一个 Claude Code Skill。  
+> Opus 的护城河在于**五器联动**——单个工具可以被替代，整个飞轮难以复制。
+
+### 可借用的轮子
+
+| 轮子 | 用途 | 对应子项目 |
+|------|------|-----------|
+| `dreammis/social-auto-upload` | 多平台发布引擎（Playwright+API） | ✨ Elixir |
+| `bilibili-api-python` | B站数据采集（弹幕/评论/UP主） | ⚗️ Alembic |
+| `biliup-rs` | B站视频上传 CLI（Rust） | ✨ Elixir |
+| LOKI 声明提取管线 | 声明提取 + 核查价值评估 | 🔬 Crucible |
+| Document Contradiction NLI | 跨文档矛盾检测架构参考 | 🔬 Crucible |
+
+---
+
+## 📚 参考书目
+
+> *炼金术士的图书馆。这些书构成 Opus Magnum 的理论地基。*
+
+### 一人公司 / 超级个体
+
+| # | 书名 | 作者 | 为什么重要 |
+|---|------|------|-----------|
+| 1 | **《一人公司：为什么小而美是未来》** | Paul Jarvis | 核心理念：小不是过渡，是目的。利润 > 增长，质量 > 规模 |
+| 2 | **《从零到一》** | Peter Thiel | 寻找 0→1 创新，垄断比竞争更重要 |
+| 3 | **《精益创业》** | Eric Ries | MVP 方法论，快速验证假设，持续迭代 |
+| 4 | **《每周工作4小时》** | Tim Ferriss | 自动化+外包+生活方式设计，80/20 法则 |
+| 5 | **《一人公司生存手册》** | 清华大学出版社 | 打造长期复利的超级个体，中文原创 |
+| 6 | **《反脆弱》** | Nassim Taleb | 从不确定性中获益，拥抱波动——Opus 的哲学基础 |
+| 7 | **《原则》** | Ray Dalio | 建立自己的原则体系，系统化决策 |
+| 8 | **《深度工作》** | Cal Newport | 专注力是稀缺资源，减少浅层工作 |
+| 9 | **《增长黑客》** | Sean Ellis | 数据驱动增长，低成本获客 |
+| 10 | **《定位》** | Al Ries / Jack Trout | 占领用户心智，差异化定位 |
+
+### 矛盾检测 / 知识验证（🔬 Crucible 技术基底）
+
+| # | 书名 | 作者 | 为什么重要 |
+|---|------|------|-----------|
+| 11 | **A Mathematical Theory of Evidence** | Glenn Shafer, 1976 | D-S 证据理论圣经。冲突证据融合的数学根基 |
+| 12 | **Argumentation Mining** | Stede & Schneider, 2018 | 论证挖掘入门教材，从句子分割到论证结构 |
+| 13 | **Handbook of Formal Argumentation** | Baroni et al., 2018 | 形式化论证百科全书，含 Dung 框架、概率论证 |
+| 14 | **Probabilistic Reasoning in Intelligent Systems** | Judea Pearl, 1988 | 贝叶斯网络之父，D-S 理论章节必读 |
+| 15 | **Natural Language Inference** | MacCartney, 2020 | NLI 最新综述，SNLI→MNLI→XNLI |
+| 16 | **Belief Revision** | Gärdenfors, 2003 | 知识库一致性维护理论基础 |
+| 17 | **Truth Maintenance Systems** (论文) | Doyle, 1979 | TMS 原始经典，短小精悍 |
+
+### 炼金术 / 文化与品牌
+
+| # | 书名/来源 | 说明 |
+|---|----------|------|
+| 18 | **翠玉录 (Tabula Smaragdina)** | 中世纪炼金术根本经典，赫尔墨斯智慧 |
+| 19 | **Psychology and Alchemy** | C.G. Jung，炼金术的心理学解读 |
+| 20 | **The Alchemist's Handbook** | Frater Albertus，实用炼金术入门 |
+| 21 | Unicode 炼金术符号集 | 可用于 Logo 和 UI 设计（🜂 🜃 🜁 🜄 🜍 🜊 🝤 🝫） |
+
+> 📌 **阅读建议**：每月 1-2 本，系统阅读。理论类做笔记注入 Athanor，实践类读完立刻应用。
+
+---
+
+## 💡 蓝图建议与改进方向
+
+### 一、当前阶段应该优先做的事
+
+| 优先级 | 事项 | 理由 |
+|--------|------|------|
+| 🔴 P0 | **Alembic v0.1 落地** | 快速跑通 B站→字幕→文档管道，拿到第一个 MVP |
+| 🔴 P0 | **Athaneum 团队名称统一** | knowledge-forge 仓库重命名？或保持现状只改文档引用 |
+| 🟡 P1 | **social-auto-upload 调研试跑** | 测试能否直接嵌入 Elixir，省去自己造轮子 |
+| 🟡 P1 | **参考书注入 Athanor** | 把 20 本参考书的核心摘要存入知识库，LLM 可随时引用 |
+| 🟢 P2 | **Crucible 技术选型验证** | XLM-RoBERTa-XNLI 中文效果实测 + D-S 融合原型 |
+| 🟢 P2 | **内容风格模型训练** | 积累你自己的输出样本，建立个人风格语料库 |
+
+### 二、风险提示
+
+| 风险 | 严重度 | 应对 |
+|------|--------|------|
+| **平台 API 收紧**（小红书尤甚） | 🔴 高 | 多平台分散，Playwright 兜底，不过度依赖 API |
+| **单人精力瓶颈** | 🟡 中 | MVP 原则 + Homunculus 自动化优先 + 取舍 |
+| **AI 生成内容同质化** | 🟡 中 | 个人风格语料库 + Crucible 验证差异 |
+| **变现周期长** | 🟡 中 | Phase 1-3 纯积累期，Phase 4 开始变现，心态要好 |
+| **GitHub Token 暴露** | 🔴 高 | 仓库 remote URL 含 PAT，建议改为 SSH 或移除历史 |
+
+### 三、长期战略建议
+
+| 建议 | 说明 |
+|------|------|
+| **知识资产化** | Athanor 里的知识不只是自己用——未来可以封装为付费知识库/课程 |
+| **数据集壁垒** | 矛盾检测的标注数据集是核心资产，可以开源也可以保留 |
+| **工具可单独出售** | 五器中任意一个打磨到产品级都可以单独 SaaS 化 |
+| **品牌故事化** | 炼金术叙事天然适合内容营销，"从一个铅块到黄金"的故事 |
+| **社区经营** | 把开发过程本身变成内容（B站/公众号），既是产品也是引流 |
+
+---
+
 ## 🗺️ 开发路线
 
 ### Phase 1 — 地基（当前）
@@ -270,7 +384,7 @@
 | 新名 | 旧名 | 仓库 | 路径 |
 |------|------|------|------|
 | ⚛️ Opus | — | shiyao222333-afk/opus | `D:\opus\` |
-| 🏭 Athanor | 知炬/KnowledgeForge | shiyao222333-afk/knowledge-forge | `D:\private-gpt\` |
+| 🏭 Athanor | 知炬/KnowledgeForge | shiyao222333-afk/knowledge-forge | `D:\knowledge-forge\` |
 | ⚗️ Alembic | VideoForge | shiyao222333-afk/video-forge | `D:\video-forge\` |
 | 🔬 Crucible | VeritaForge | 待创建 | 待定 |
 | ✨ Elixir | — | 远期 | 远期 |
