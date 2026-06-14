@@ -338,7 +338,7 @@
 | 项目 | 状态 | 交付物 |
 |------|------|--------|
 | 🏭 Athanor | ✅ MVP | 多页面 Streamlit + Qdrant + LLM问答 |
-| ⚗️ Alembic | 📋 规划 | B站下载 + CC字幕 + LLM文档化 |
+| ⚗️ Alembic | 📋 骨架 | B站下载 + CC字幕 + LLM文档化 |
 | 🔬 Crucible | 📋 骨架 | Pipeline 架构 + 8核心模块 + Streamlit UI |
 | ✨ Elixir | 💭 远期 | — |
 | 🤖 Homunculus | 💭 远期 | — |
