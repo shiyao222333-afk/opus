@@ -35,13 +35,37 @@
 | 项目 | Emoji | 功能 | GitHub | 本地路径 | 状态 |
 |------|-------|------|--------|----------|:--:|
 | **OpusMagnum** | ⚛️ | 总指挥部（本仓库）| [shiyao222333-afk/opus-magnum](https://github.com/shiyao222333-afk/opus-magnum) | `D:\opus-magnum\` | 🚧 |
+| **Workflow** | 📐 | 项目管理流程（方法论）| [workflow/](workflow/) | `~/.workbuddy/skills/` | ✅ v2.6 |
 | **Athanor · 熔知** | 🏭 | 知识引擎 (MindForge) | [shiyao222333-afk/athanor](https://github.com/shiyao222333-afk/athanor) | `D:\knowledge-forge\` | ✅ v0.4.1 |
 | **Alembic · 馏析** | ⚗️ | 视频→知识提炼 (DeepDistill) | [shiyao222333-afk/alembic](https://github.com/shiyao222333-afk/alembic) | `D:\video-forge\` | 🚧 |
 | **Crucible · 炼真** | 🔬 | 信任聚合 + 跨源矛盾检测 (TrialFire) | [shiyao222333-afk/crucible](https://github.com/shiyao222333-afk/crucible) | `D:\crucible\` | 🔮 |
 | **Elixir · 凝华** | ✨ | 内容发布 (PureDrop) | 远期 | 远期 | 🔮 |
 | **Homunculus · 化形** | 🤖 | 自动化 (FormWeaver) | 远期 | 远期 | 🔮 |
 
-> 完整蓝图见 [BLUEPRINT.md](../opus/BLUEPRINT.md)（在 `shiyao222333-afk/opus` 仓库）
+> 完整蓝图见 [BLUEPRINT.md](BLUEPRINT.md)
+> 项目管理流程见 [workflow/](workflow/)
+
+---
+
+## 项目管理流程 (Workflow v2.6)
+
+OpusMagnum 所有子项目统一使用一套**标准化项目管理流程**：
+
+```
+用户指令 → Pre-flight → Phase 0(意图分类) → Phase 0.1(蓝图对齐) → Phase 0.5(代码探索)
+         → Phase 1(计划拆解+节点映射) → Phase 1.5(方案讨论+节点契约) → Phase 2(执行+防偏)
+         → Phase 2.5(自审) → Phase 3(L1→L4验证) → Phase 4(文档+蓝图反哺) → Phase 5(归档)
+```
+
+核心特点：
+- **蓝图先行** — 每个项目有 BLUEPRINT.md（宪法）+ FLOWCHART.md（数据流）
+- **节点映射** — 每个任务必须标注 📍节点ID，找不到节点 → 红牌警告
+- **MVP 优先** — Phase 1.5 审查：有更简单的方式吗？
+- **防偏检查** — Phase 2 每个任务执行前检查：服务于当前重心？
+- **技术债追踪** — 跳过的非 MVP 项记入 TECH_DEBT.md（不丢）
+- **蓝图反哺** — Phase 4 结束后反思：重心缓解了？新认知？
+
+> 详细文档：[workflow/BLUEPRINT.md](workflow/BLUEPRINT.md) · [workflow/FLOWCHART.md](workflow/FLOWCHART.md)
 
 ---
 
@@ -124,9 +148,14 @@ GITHUB_TOKEN=ghp_xxxxxxxxxx
 ## 目录结构
 
 ```
-D:\opus-magnum\
-├── api_spec.md              # 项目间通信规范（核心文档）
-├── schemas/                  # 统一数据模型（5 个 JSON Schema）
+opus-magnum/
+├── BLUEPRINT.md            # 项目宪法（一人公司愿景+五器工坊）
+├── README.md               # 本文件
+├── api_spec.md             # 项目间通信规范（核心文档）
+├── workflow/               # 📐 项目管理流程
+│   ├── BLUEPRINT.md        #   流程宪法
+│   └── FLOWCHART.md        #   流程架构图（Mermaid）
+├── schemas/                # 统一数据模型（5 个 JSON Schema）
 │   ├── document.schema.json      # 文档格式
 │   ├── video_meta.schema.json   # 视频元数据
 │   ├── claim.schema.json        # 声明结构
