@@ -49,9 +49,9 @@ repo_summaries = get_all_repo_summaries()
 
 col1, col2, col3, col4 = st.columns(4)
 repos = [
-    ("Athanor", repo_summaries.get("Athanor", {})),
-    ("Alembic", repo_summaries.get("Alembic", {})),
-    ("Crucible", repo_summaries.get("Crucible", {})),
+    ("Citrinitas", repo_summaries.get("Citrinitas", {})),
+    ("Nigredo", repo_summaries.get("Nigredo", {})),
+    ("Albedo", repo_summaries.get("Albedo", {})),
     ("OpusMagnum", repo_summaries.get("OpusMagnum", {})),
 ]
 
@@ -95,7 +95,7 @@ col_a, col_b, col_c = st.columns(3)
 
 with col_a:
     st.markdown(
-        "[➕ 打开 Athanor 建 Issue](https://github.com/shiyao222333-afk/athanor/issues/new)",
+        "[➕ 打开 Citrinitas 建 Issue](https://github.com/shiyao222333-afk/citrinitas/issues/new)",
         unsafe_allow_html=False,
     )
 
@@ -104,13 +104,13 @@ with col_b:
         st.markdown("""
 | 项目 | 端点 | 用途 |
 |------|------|------|
-| Athanor | `GET /health` | 健康检查 |
-| Athanor | `POST /api/documents/ingest` | 入库文档 |
-| Athanor | `GET /api/documents/search` | 搜索知识库 |
-| Alembic | `POST /api/videos/submit` | 提交视频任务 |
-| Alembic | `GET /api/videos/{id}/status` | 查询进度 |
-| Crucible | `POST /api/scan` | 触发检测 |
-| Crucible | `GET /api/reports/latest` | 获取最新报告 |
+| Citrinitas | `GET /health` | 健康检查 |
+| Citrinitas | `POST /api/documents/ingest` | 入库文档 |
+| Citrinitas | `GET /api/documents/search` | 搜索知识库 |
+| Nigredo | `POST /api/videos/submit` | 提交视频任务 |
+| Nigredo | `GET /api/videos/{id}/status` | 查询进度 |
+| Albedo | `POST /api/scan` | 触发检测 |
+| Albedo | `GET /api/reports/latest` | 获取最新报告 |
 
 认证方式：所有请求带 `X-Api-Key` 请求头。
         """)
@@ -120,12 +120,12 @@ with col_c:
         st.markdown("""
 | 阶段 | 项目 | 状态 |
 |------|------|:--:|
-| Phase 1 地基 | 🏭 Athanor | ✅ MVP |
-| Phase 1 地基 | ⚗️ Alembic | 📋 骨架 |
-| Phase 1 地基 | 🔬 Crucible | 📋 骨架 |
-| Phase 2 摄取 | Alembic v0.1 | B站→字幕→文档 |
-| Phase 3 验证 | Crucible v0.1 | 矛盾检测 |
-| Phase 4 输出 | Elixir | 远期 |
+| Phase 1 地基 | 🏭 Citrinitas | ✅ MVP |
+| Phase 1 地基 | ⚗️ Nigredo | 📋 骨架 |
+| Phase 1 地基 | 🔬 Albedo | 📋 骨架 |
+| Phase 2 摄取 | Nigredo v0.1 | B站→字幕→文档 |
+| Phase 3 验证 | Albedo v0.1 | 矛盾检测 |
+| Phase 4 输出 | Rubedo | 远期 |
 | Phase 5 自动化 | Homunculus | 远期 |
         """)
 

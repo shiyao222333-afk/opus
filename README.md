@@ -22,17 +22,17 @@ flowchart TB
     OM --> Progress["📋 开发进度<br/>跨仓库 Issue 聚合"]
     OM --> Hub["🔗 项目连接器<br/>API 连通性测试"]
 
-    OM --> Athanor["🏭 Athanor · 熔知<br/>知识引擎 :8080"]
-    OM --> Alembic["⚗️ Alembic · 馏析<br/>视频→知识 :8502"]
-    OM --> Crucible["🔬 Crucible · 炼真<br/>信任聚合+矛盾检测 :8503"]
+    OM --> Citrinitas["🏭 Citrinitas · 熔知<br/>知识引擎 :8080"]
+    OM --> Nigredo["⚗️ Nigredo · 馏析<br/>视频→知识 :8502"]
+    OM --> Albedo["🔬 Albedo · 炼真<br/>信任聚合+矛盾检测 :8503"]
 
     style OM fill:#8A2BE2,color:#fff,stroke:#6a1b9a
     style Dash fill:#cce5ff,stroke:#0275d8
     style Progress fill:#cce5ff,stroke:#0275d8
     style Hub fill:#cce5ff,stroke:#0275d8
-    style Athanor fill:#d4edda,stroke:#28a745
-    style Alembic fill:#d4edda,stroke:#28a745
-    style Crucible fill:#d4edda,stroke:#28a745
+    style Citrinitas fill:#d4edda,stroke:#28a745
+    style Nigredo fill:#d4edda,stroke:#28a745
+    style Albedo fill:#d4edda,stroke:#28a745
 ```
 
 ---
@@ -42,19 +42,19 @@ flowchart TB
 | 项目 | Emoji | 功能 | GitHub | 本地路径 | 状态 |
 |------|-------|------|--------|----------|:--:|
 | **OpusMagnum** | ⚛️ | 总指挥部（本仓库）| [shiyao222333-afk/opus-magnum](https://github.com/shiyao222333-afk/opus-magnum) | `D:\opus-magnum\` | 🚧 |
-| **Workflow** | 📐 | 项目管理流程（方法论）| [workflow/](workflow/) | `~/.workbuddy/skills/` | ✅ v2.7 |
-| **Athanor · 熔知** | 🏭 | 知识引擎 (MindForge) | [shiyao222333-afk/athanor](https://github.com/shiyao222333-afk/athanor) | `D:\knowledge-forge\` | ✅ v0.4.1 |
-| **Alembic · 馏析** | ⚗️ | 视频→知识提炼 (DeepDistill) | [shiyao222333-afk/alembic](https://github.com/shiyao222333-afk/alembic) | `D:\video-forge\` | 🚧 |
-| **Crucible · 炼真** | 🔬 | 信任聚合 + 跨源矛盾检测 (TrialFire) | [shiyao222333-afk/crucible](https://github.com/shiyao222333-afk/crucible) | `D:\crucible\` | 🔮 |
-| **Elixir · 凝华** | ✨ | 内容发布 (PureDrop) | 远期 | 远期 | 🔮 |
-| **Homunculus · 化形** | 🤖 | 自动化 (FormWeaver) | 远期 | 远期 | 🔮 |
+| **Workflow** | 📐 | 项目管理流程（方法论）| [workflow/](workflow/) | `~/.workbuddy/skills/` | ✅ v3.1 |
+| **Citrinitas · 熔知** | 🏭 | 知识引擎 | [shiyao222333-afk/citrinitas](https://github.com/shiyao222333-afk/citrinitas) | `D:\citrinitas\` | ✅ v0.4.5 |
+| **Nigredo · 馏析** | ⚗️ | 视频→知识提炼 | [shiyao222333-afk/nigredo](https://github.com/shiyao222333-afk/nigredo) | `D:\nigredo\` | 🚧 |
+| **Albedo · 炼真** | 🔬 | 信任聚合 + 跨源矛盾检测 | [shiyao222333-afk/albedo](https://github.com/shiyao222333-afk/albedo) | `D:\albedo\` | 🔮 |
+| **Rubedo · 凝华** | ✨ | 内容发布 | 远期 | 远期 | 🔮 |
+| **Homunculus · 化形** | 🤖 | 自动化 | 远期 | 远期 | 🔮 |
 
 > 完整蓝图见 [BLUEPRINT.md](BLUEPRINT.md)
 > 项目管理流程见 [workflow/](workflow/)
 
 ---
 
-## 项目管理流程 (Workflow v2.7)
+## 项目管理流程 (Workflow v3.1)
 
 OpusMagnum 所有子项目统一使用一套**标准化项目管理流程**：
 
@@ -135,9 +135,9 @@ GITHUB_TOKEN=ghp_xxxxxxxxxx
 
 手动测试各项目 API 是否打通：
 - Ping 各项目健康检查端点
-- 搜索 Athanor 知识库
-- 提交视频给 Alembic 处理
-- 触发 Crucible 矛盾检测
+- 搜索 Citrinitas 知识库
+- 提交视频给 Nigredo 处理
+- 触发 Albedo 矛盾检测
 
 ---
 
@@ -148,7 +148,7 @@ GITHUB_TOKEN=ghp_xxxxxxxxxx
 **核心原则**：
 - 统一认证：`X-Api-Key` 请求头
 - 统一数据格式：JSON，符合 `schemas/` 目录下的 Schema
-- 统一端口分配：Athanor 8080 (NiceGUI) / Alembic 8502 / Crucible 8503 / OpusMagnum 8500
+- 统一端口分配：Citrinitas 8080 (NiceGUI) / Nigredo 8502 / Albedo 8503 / OpusMagnum 8500
 
 ---
 
@@ -198,7 +198,7 @@ opus-magnum/
 | 外部 API | **PyGithub** | 读取 GitHub Issues |
 | 项目间调用 | **requests** | HTTP REST 客户端 |
 
-> **注**: Athanor 已从 Streamlit 迁移到 NiceGUI 3.13 (SPA)，OpusMagnum 自身仍保持 Streamlit。
+> **注**: Citrinitas 已从 Streamlit 迁移到 NiceGUI 3.13 (SPA)，OpusMagnum 自身仍保持 Streamlit。
 
 ---
 

@@ -27,10 +27,10 @@ st.caption("调用各项目的 GET /health 端点")
 
 cols = st.columns(4)
 projects = [
-    ("🏭 Athanor", settings.athanor),
-    ("⚗️ Alembic", settings.alembic),
-    ("🔬 Crucible", settings.crucible),
-    ("✨ Elixir", settings.elixir),
+    ("🏭 Citrinitas", settings.citrinitas),
+    ("⚗️ Nigredo", settings.nigredo),
+    ("🔬 Albedo", settings.albedo),
+    ("✨ Rubedo", settings.rubedo),
 ]
 
 for (label, proj), col in zip(projects, cols):
@@ -59,7 +59,7 @@ with st.expander("🏭 Athanor — 搜索知识库", expanded=False):
     if st.button("🔍 搜索", key="btn_search"):
         if search_query:
             try:
-                url = settings.athanor.endpoint("/api/documents/search")
+                url = settings.citrinitas.endpoint("/api/documents/search")
                 resp = req.get(
                     url,
                     params={"q": search_query, "kb_name": search_kb, "limit": 5},
@@ -84,7 +84,7 @@ with st.expander("⚗️ Alembic — 提交视频任务", expanded=False):
     if st.button("🚀 提交任务", key="btn_submit_video"):
         if video_url:
             try:
-                url = settings.alembic.endpoint("/api/videos/submit")
+                url = settings.nigredo.endpoint("/api/videos/submit")
                 resp = req.post(
                     url,
                     json={"url": video_url, "priority": "normal"},
@@ -103,7 +103,7 @@ with st.expander("🔬 Crucible — 触发矛盾检测", expanded=False):
     scan_kb = st.text_input("目标知识库", value="default", key="scan_kb")
     if st.button("🔍 开始检测", key="btn_scan"):
         try:
-            url = settings.crucible.endpoint("/api/scan")
+            url = settings.albedo.endpoint("/api/scan")
             resp = req.post(
                 url,
                 json={"kb_name": scan_kb, "mode": "full"},

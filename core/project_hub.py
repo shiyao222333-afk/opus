@@ -16,11 +16,11 @@ def _headers() -> dict:
     }
 
 
-# ─── Athanor 客户端 ────────────────────────────────────────────────
+# ─── Citrinitas 客户端 ────────────────────────────────────────────────
 
 def athanor_ingest_document(doc: dict) -> dict:
     """
-    推送文档到 Athanor 知识库。
+    推送文档到 Citrinitas 知识库。
     调用：POST http://localhost:8080/api/documents/ingest
     """
     url = settings.athanor.endpoint("/api/documents/ingest")
@@ -33,7 +33,7 @@ def athanor_ingest_document(doc: dict) -> dict:
 
 def athanor_search(query: str, kb_name: str = "default", limit: int = 5) -> list:
     """
-    在 Athanor 知识库搜索。
+    在 Citrinitas 知识库搜索。
     调用：GET http://localhost:8080/api/documents/search?q=...
     """
     url = settings.athanor.endpoint("/api/documents/search")
@@ -46,11 +46,11 @@ def athanor_search(query: str, kb_name: str = "default", limit: int = 5) -> list
         return []
 
 
-# ─── Alembic 客户端 ────────────────────────────────────────────────
+# ─── Nigredo 客户端 ────────────────────────────────────────────────
 
 def alembic_submit_video(url: str, priority: str = "normal") -> dict:
     """
-    提交视频处理任务到 Alembic。
+    提交视频处理任务到 Nigredo。
     调用：POST http://localhost:8502/api/videos/submit
     """
     endpoint = settings.alembic.endpoint("/api/videos/submit")
@@ -79,11 +79,11 @@ def alembic_get_video_status(video_id: str) -> dict:
         return {"error": str(e)}
 
 
-# ─── Crucible 客户端 ────────────────────────────────────────────────
+# ─── Albedo 客户端 ────────────────────────────────────────────────
 
 def crucible_trigger_scan(kb_name: str, mode: str = "full") -> dict:
     """
-    触发 Crucible 矛盾检测。
+    触发 Albedo 矛盾检测。
     调用：POST http://localhost:8503/api/scan
     """
     url = settings.crucible.endpoint("/api/scan")
@@ -101,7 +101,7 @@ def crucible_trigger_scan(kb_name: str, mode: str = "full") -> dict:
 
 def crucible_get_latest_report() -> dict:
     """
-    获取 Crucible 最新矛盾报告摘要。
+    获取 Albedo 最新矛盾报告摘要。
     调用：GET http://localhost:8503/api/reports/latest
     """
     url = settings.crucible.endpoint("/api/reports/latest")

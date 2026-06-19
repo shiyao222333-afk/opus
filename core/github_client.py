@@ -49,9 +49,9 @@ class GitHubClient:
     def list_all_issues(self, state: str = "open") -> dict:
         """读取所有子项目仓库的 Issues，按项目分组。"""
         repos = {
-            "athanor": settings.athanor_repo,
-            "alembic": settings.alembic_repo,
-            "crucible": settings.crucible_repo,
+            "athanor": settings.citrinitas_repo,
+            "alembic": settings.nigredo_repo,
+            "crucible": settings.albedo_repo,
             "opus-magnum": settings.opus_repo,
         }
         result = {}

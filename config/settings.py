@@ -41,23 +41,23 @@ class Settings:
         self.opus_url = get_env("OPUSMAGNUM_URL", "http://localhost:8500")
 
         # 各子项目
-        self.athanor = ProjectConfig(
-            name="Athanor · 熔知",
+        self.citrinitas = ProjectConfig(
+            name="Citrinitas · 熔知",
             port=int(get_env("ATHANOR_PORT", "8080")),
             url=get_env("ATHANOR_URL", "http://localhost:8080"),
         )
-        self.alembic = ProjectConfig(
-            name="Alembic · 馏析",
+        self.nigredo = ProjectConfig(
+            name="Nigredo · 馏析",
             port=int(get_env("ALEMBIC_PORT", "8502")),
             url=get_env("ALEMBIC_URL", "http://localhost:8502"),
         )
-        self.crucible = ProjectConfig(
-            name="Crucible · 炼真",
+        self.albedo = ProjectConfig(
+            name="Albedo · 炼真",
             port=int(get_env("CRUCIBLE_PORT", "8503")),
             url=get_env("CRUCIBLE_URL", "http://localhost:8503"),
         )
-        self.elixir = ProjectConfig(
-            name="Elixir · 凝华",
+        self.rubedo = ProjectConfig(
+            name="Rubedo · 凝华",
             port=int(get_env("ELIXIR_PORT", "8504")),
             url=get_env("ELIXIR_URL", "http://localhost:8504"),
         )
@@ -65,9 +65,9 @@ class Settings:
         # GitHub
         self.github_token = get_env("GITHUB_TOKEN", "")
         self.github_username = get_env("GITHUB_USERNAME", "shiyao222333-afk")
-        self.athanor_repo = get_env("ATHANOR_REPO", "shiyao222333-afk/athanor")
-        self.alembic_repo = get_env("ALEMBIC_REPO", "shiyao222333-afk/alembic")
-        self.crucible_repo = get_env("CRUCIBLE_REPO", "shiyao222333-afk/crucible")
+        self.citrinitas_repo = get_env("ATHANOR_REPO", "shiyao222333-afk/citrinitas")
+        self.nigredo_repo = get_env("ALEMBIC_REPO", "shiyao222333-afk/nigredo")
+        self.albedo_repo = get_env("CRUCIBLE_REPO", "shiyao222333-afk/albedo")
         self.opus_repo = get_env("OPUSMAGNUM_REPO", "shiyao222333-afk/opus-magnum")
 
         # 日志
@@ -76,15 +76,15 @@ class Settings:
     @property
     def all_projects(self) -> list:
         """返回所有子项目配置列表。"""
-        return [self.athanor, self.alembic, self.crucible, self.elixir]
+        return [self.citrinitas, self.nigredo, self.albedo, self.rubedo]
 
     def get_project_by_name(self, name: str) -> ProjectConfig | None:
         """按名称查找项目配置。"""
         mapping = {
-            "athanor": self.athanor,
-            "alembic": self.alembic,
-            "crucible": self.crucible,
-            "elixir": self.elixir,
+            "citrinitas": self.citrinitas,
+            "nigredo": self.nigredo,
+            "albedo": self.albedo,
+            "rubedo": self.rubedo,
         }
         return mapping.get(name.lower())
 

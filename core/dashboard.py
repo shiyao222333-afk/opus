@@ -48,9 +48,9 @@ def get_all_repo_summaries() -> dict:
     """获取所有子项目仓库摘要。"""
     gh = _get_gh()
     return {
-        "Athanor": gh.get_repo_summary(settings.athanor_repo),
-        "Alembic": gh.get_repo_summary(settings.alembic_repo),
-        "Crucible": gh.get_repo_summary(settings.crucible_repo),
+        "Citrinitas": gh.get_repo_summary(settings.citrinitas_repo),
+        "Nigredo": gh.get_repo_summary(settings.nigredo_repo),
+        "Albedo": gh.get_repo_summary(settings.albedo_repo),
         "OpusMagnum": gh.get_repo_summary(settings.opus_repo),
     }
 
