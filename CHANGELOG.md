@@ -4,6 +4,9 @@
 > 格式基于 [Keep a Changelog](https://keepachangelog.com/zh-CN/)，
 > 版本号遵循 [语义化版本](https://semver.org/lang/zh-CN/)。
 >
+> 本文档记录历史变更，版本号遵循 `PROJECT_PLAN.md` 的「当前状态」段落。
+> 如两份文件版本号不一致，以 `PROJECT_PLAN.md` 为准。
+
 > **版本类型**: PATCH(修复) / MINOR(功能) / MAJOR(破坏)
 
 ---
