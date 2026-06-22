@@ -43,11 +43,10 @@ flowchart TB
 |------|-------|------|--------|----------|:--:|
 | **OpusMagnum** | ⚛️ | 总指挥部（本仓库）| [shiyao222333-afk/opus-magnum](https://github.com/shiyao222333-afk/opus-magnum) | `D:\opus-magnum\` | 🚧 |
 | **Workflow** | 📐 | 项目管理流程（方法论）| [workflow/](workflow/) | `~/.workbuddy/skills/` | ✅ v3.1 |
-| **Citrinitas · 熔知** | 🏭 | 知识引擎 | [shiyao222333-afk/citrinitas](https://github.com/shiyao222333-afk/citrinitas) | `D:\citrinitas\` | ✅ v0.4.5 |
+| **Citrinitas · 熔知** | 🏭 | 知识引擎 | [shiyao222333-afk/citrinitas](https://github.com/shiyao222333-afk/citrinitas) | `D:\citrinitas\` | ✅ v0.7.0 |
 | **Nigredo · 馏析** | ⚗️ | 视频→知识提炼 | [shiyao222333-afk/nigredo](https://github.com/shiyao222333-afk/nigredo) | `D:\nigredo\` | 🚧 |
 | **Albedo · 炼真** | 🔬 | 信任聚合 + 跨源矛盾检测 | [shiyao222333-afk/albedo](https://github.com/shiyao222333-afk/albedo) | `D:\albedo\` | 🔮 |
-| **Rubedo · 凝华** | ✨ | 内容发布 | 远期 | 远期 | 🔮 |
-| **Homunculus · 化形** | 🤖 | 自动化 | 远期 | 远期 | 🔮 |
+| **Rubedo · 凝华** | ✨ | AI辅助副业SOP自动化平台（共用工具层 + SOP独特工具层） | 规划中 | 规划中 | 📋 |
 
 > 完整蓝图见 [BLUEPRINT.md](BLUEPRINT.md)
 > 项目管理流程见 [workflow/](workflow/)
